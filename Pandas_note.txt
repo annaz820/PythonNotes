@@ -1,0 +1,23 @@
+Pandas:
+
+- Pull a list with data value range: obj2[obj2 >0]
+- build a series from dictionary: sdata = { ...  } obj = pd.Series(sdata)
+
+Data Frame:
+- index & columns
+- give dataframe a name: obj.name = '...'     obj.index.name = '...'
+- Quickly see top of the data set: xxx.head() or xxx.head(#)
+- Change index and column names or add columns and create another dataframe: frame2 = pd.DataFrame(data, columns=[], index=[])
+- get (a) column(s): frame['name1'] OR frame.name1 OR pd.DataFrame(dict, index=[x, x, x]) 
+OR pdata = {'Ohio': frame3['Ohio'][:-1],
+         'Nevada': frame3['Nevada'][:2]}
+   pd.DataFrame(pdata)
+- get a row: frame.loc['col']
+- set value of a column: frame['xxx'] = xxx OR frame['xxx'] = np.arange(#.) # This is a range of 0-#
+- set different value for a column:
+val = pd.Series([-1.2, -1.5, -1.7], index=['two', 'four', 'five'])
+frame2['debt'] = val
+- add a column with bool value based on the value of another column: frame2['eastern'] = frame2.state == 'Ohio'
+- delete column: del frame['xxx']
+- Tranpose of a data frame (does not change the original df tho): frame.T
+- get values as array: frame.values
